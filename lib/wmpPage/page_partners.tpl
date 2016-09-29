@@ -1,1 +1,0 @@
-{Content::upContentList(Lang::getID(), 3, '', 0, 30, true, '', 'partners')}

@@ -3,7 +3,7 @@
 # Названия типов отображения конентов
 $content_view_type_title = array(
     'news' => 'Новость',
-    'interesting' => 'Интересно знать',
+    'product' => 'Таблица товара',
     'default' => 'Default',
     'empty'   => 'Empty'
 );
@@ -11,7 +11,8 @@ $content_view_type_title = array(
 # Название отображения списка контентов
 $content_view_list_type_title = array(
     'default' => 'Список статей',
-    'news' => 'Список новостей'
+    'news' => 'Список новостей',
+    'catalog' => 'Каталог товаров'
 );
 
 # Названия типов отображения пунктов меню
@@ -19,15 +20,5 @@ $menu_view_type_title = array(
     'default' => 'Default',
 	'o-nas' => 'О нас',
 	'news' => 'Новости',
-	'partners' => 'Партнёры',
-	'katalog_oborudovaniy' => 'Каталог оборудования',
-	'podkatalog' => 'Подкаталоги',
-        'products'=>'Товары',
-	'otzyivyi' => 'Отзывы',
-	'use' => 'Сферы применения',
-	'sphere' => 'Сфера',
-	'service' => 'Сервис и загрузка',
-	'kontaktyi' => 'Контакты',
-        'interesting' => 'Интересно знать',
-	'youtube' => 'Youtube'
+        'catalog' => 'Каталог'
 );

@@ -111,6 +111,7 @@ if (!$wmpAdmin->isLogedIn()) {
                     //echo admin_func_menu_block_list('Заказы', 'orders/');
                                         echo admin_func_menu_block_list('Таблица товара', mGridTable('ProductAttr'));
 					echo admin_func_menu_block_list('Таблица электрических товаров', mGridTable('ElProduct'));
+                                        echo admin_func_menu_block_list('Преформа', mGridTable('preform'));
                     echo '</ul></li>';
                 }
 

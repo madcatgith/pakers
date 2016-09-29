@@ -1,19 +1,15 @@
-<section class="section-breadcrumbs hide-on-small">
-    <div class="container">
-        <div class="b-breadcrumbs">
-            <ul class="b-breadcrumbs__list">
-				{if count($crumbs) gt 0}
-					{foreach $crumbs as $crumb}
-						{if next($crumbs)}
-							<li><a href="{$crumb.href}">{$crumb.title}</a></li>
-						{else}
-							<li><span>{$crumb.title}</span></li>
-						{/if}
-					{/foreach}
-				{/if}
-            </ul>
-        </div>
-    </div>
-</section>
+            <div class="b-breadcrumbs">
+                <ul class="b-breadcrumbs__list">
+                    {if count($crumbs) gt 0}
+			{foreach $crumbs as $crumb}
+                            {if next($crumbs)}
+				<li><a href="{$crumb.href}">{$crumb.title}</a></li>
+                            {else}
+				<li><span>{$crumb.title}</span></li>
+                            {/if}
+                        {/foreach}
+                    {/if}
+                </ul>
+            </div>          
 
 				

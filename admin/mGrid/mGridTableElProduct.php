@@ -1,16 +1,16 @@
 <?php
 
-$GridTitle = 'Таблица электродвигателей';
+$GridTitle = 'Преформа';
 $from = array(
     'jsSort' => 1,
     'jsSortField' => 'sort',
-    'table' => 'product_electric',
-    'as' => 'pattr',
+    'table' => 'preform',
+    'as' => 'preform',
     'lang' => 1,
     'limit' => 100,
     'islanged' => false,
     'style' => 'width:100%',
-    'orderby' => 'pattr.sort',
+    'orderby' => 'preform.sort',
     'nonlang_field' => array(
         'id' => array(
             'title' => 'ID',
@@ -22,17 +22,7 @@ $from = array(
             'tablestyle' => 'width: 70px;',
             'colType' => 'check'
         ),
-		 'product_id' => array(
-            'title'         => 'Товар',
-            'style'         => 'width: 100%',
-            'tablestyle'    => 'width: 210px;padding-left:10px;',
-            'colType'       => 'select',
-            'table'         => 'product',
-            'field'         => 'id',
-            'outfield' 		=> 'title',
-            'islanged'      => true,
-            'rules'         => true
-        ),
+		 
     ),
     'multylang_field' => array(
 		'type_min' => array(
@@ -71,5 +61,5 @@ $from = array(
             'colType' => 'text'
         ),
     ),
-    'row_seq' => array('id','product_id', 'active')
+    'row_seq' => array('id', 'active')
 );

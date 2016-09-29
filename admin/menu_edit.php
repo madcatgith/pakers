@@ -281,14 +281,22 @@ echo "</td>";
 echo admin_func_right_table_row_start(1);
 echo admin_func_right_table_data("Картинка:", "", "1lb");
 echo admin_func_right_table_data(admin_func_right_input("", "imgurl_full", $imgurl, 215, 3) . "&nbsp;" . admin_func_right_input("submit", "", Dictionary::GetAdminWord(239), "", "onClick=\"newwin2('files.php?show=imgurl_full',720,520); return false;\""), "", "2br");
-
+/*
 echo admin_func_right_table_row_start(1);
 echo admin_func_right_table_data("Файл:", "", "1l");
 echo admin_func_right_table_data(admin_func_right_input('', 'fileSrc', $fileSrc, 215, 3, '', array('id' => 'fileSrc')) . '&nbsp;' . admin_func_right_input("submit", "", Dictionary::GetAdminWord(239), '', 'onclick="newwin2(\'/admin/files.php?show=jqGrid&amp;obj=fileSrc\', 720, 520); return false;"'), '', '2r');
-
+*/
 echo admin_func_right_table_row_start(1);
 echo admin_func_right_table_data("Кол-во элементов на странице:", "", "2lb");
 echo admin_func_right_table_data(admin_func_right_input("", "onPage", $onPage, 50, 3, ''), "", "1br");
+
+echo admin_func_right_table_row_start(1);
+echo admin_func_right_table_data("Показывать дату", "", "2lb");
+echo admin_func_right_table_data(admin_func_right_input("checkbox", "showDate", 1, '', ($showDate ? ' checked="checked"' : '')), "", "1br");
+
+echo admin_func_right_table_row_start(1);
+echo admin_func_right_table_data("Не показывать для бесплатных кофе машин", "", "2lb");
+echo admin_func_right_table_data(admin_func_right_input("checkbox", "showInFreeCoffee", 1, '', ($showInFreeCoffee ? ' checked="checked"' : '')), "", "1br");
 
 echo admin_func_right_table_row_start(1);
 echo admin_func_right_table_data("class [html]:", "", "2lb");
