@@ -1,236 +1,269 @@
 <!DOCTYPE html>
 <html lang="ru">
-    <head>
-        
-		<meta charset="utf-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-        {SEO::getSeoTags()}
-		<link rel="apple-touch-icon" sizes="57x57" href="../../files/gallery/apple-icon-57x57.png">
-		<link rel="apple-touch-icon" sizes="60x60" href="../../files/gallery/apple-icon-60x60.png">
-		<link rel="apple-touch-icon" sizes="72x72" href="../../files/gallery/apple-icon-72x72.png">
-		<link rel="apple-touch-icon" sizes="76x76" href="../../files/gallery/apple-icon-76x76.png">
-		<link rel="apple-touch-icon" sizes="114x114" href="../../files/gallery/apple-icon-114x114.png">
-		<link rel="apple-touch-icon" sizes="120x120" href="../../files/gallery/apple-icon-120x120.png">
-		<link rel="apple-touch-icon" sizes="144x144" href="../../files/gallery/apple-icon-144x144.png">
-		<link rel="apple-touch-icon" sizes="152x152" href="../../files/gallery/apple-icon-152x152.png">
-		<link rel="apple-touch-icon" sizes="180x180" href="../../files/gallery/apple-icon-180x180.png">
-		<link rel="icon" type="image/png" sizes="192x192"  href="../../files/gallery/android-icon-192x192.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="../../files/gallery/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="96x96" href="../../files/gallery/favicon-96x96.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="../../files/gallery/favicon-16x16.png">
-		<link rel="manifest" href="../../manifest.json">
-                <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700italic,700' rel='stylesheet' type='text/css'>
-		<meta name="msapplication-TileColor" content="#ffffff">
-		<meta name="msapplication-TileImage" content="../../files/gallery/ms-icon-144x144.png">
-		<meta name="theme-color" content="#ffffff">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
-		<link rel="stylesheet" href="../../media/css/style.css?rand=0.95"/>
-        {if Registry::get('isLoginAdmin')}
-            <link href="/media/css/admin.css?v={$noCache}" rel="stylesheet" media="all">
-            <script type="text/javascript" src="/media/js/admin.js?v={$noCache}"></script>
-        {/if}
-        <script>var SESSID_ID = {json_encode(wmp_sessid())};</script>
-		<script type="text/javascript">
-            window.onload = function() {
-				var aheight = document.getElementById('headerId').offsetHeight;
-				var bmargin;
-				bmargin = aheight;
-				document.getElementById('mainId').style.marginTop = bmargin + "px";
-			}
-		</script>
-    </head>
-	<body oncopy="return false">
-		<!-- wrapper -->
-		<div class="l-wrapper">
-			<!-- header -->
-			<header id="headerId" class="l-header b-header" style="position: fixed; z-index: 222;">
-				<div class="container">
-					<div class="b-header__top">
-						<div class="b-header__navbar show-on-tablet ">
-							<a class="js-nav-top-show" href="#">
-								<i class="icon-menu"></i>
-							</a>
-						</div>
-						<div class="b-logo b-header__logo left">
-							<a href="/"><i class="icon-logo"></i></a>
-						</div>
-						<div class="b-header__contact right">
-							<div class="inline-list b-header__contact-social hide-on-tablet">
-								{Banner::show(1, 'socials')}
-							</div>
-							<div class="inline-list b-header__contact-tel">
-								{Controller::run('iblock/contacts/secondary')}
-							</div>
-						</div>
-					</div>
-					<nav class="b-nav-top hide-on-tablet">
-						<ul class="inline-list b-nav-top__menu-list">
-							{Menu::getTreeByTemplate($langID, 1, 'li')}
-						</ul>
-					</nav>
-				</div>
-			</header>
-			<!-- header end -->
-			<!-- mobile menu-->
-			<div class="offcanvas-mobile">
-				<nav class="b-nav-top">
-					<ul class="">
-						{Menu::getTreeByTemplate($langID, 1, 'li')}
-					</ul>
-				</nav>
-				<div class="b-header__contact-tel" style="list-style-type: none;">
-					{Controller::run('iblock/contacts/secondary')}
-				</div>
-				<div class="b-header__contact-social">
-					{Banner::show(1, 'socials')}
-				</div>
-			</div>
-			<!-- mobile menu end-->
-			<!--arrow top-->
-			<div id="scrollup"><img alt="Прокрутить вверх" src="../../images/arrow-top.png"></div>
-			<style scoped>
-				@media(max-width: 960px) {
-					#scrollup {
-						width:50px;
-						height: 100px;
-						position: fixed; 
-						opacity: 0.8; 
-						padding: 15px 10px 10px; 
-						background: #fde428;
-						border-radius: 5px; 
-						-webkit-border-radius: 5px;
-						-moz-border-radius: 5px;
-						left: 10px; 
-						bottom: 10px; 
-						display: none; 
-						cursor: pointer;
-						z-index: 100;
-					}
-				}
-				@media(min-width: 961px) {
-					#scrollup {
-						position: fixed; 
-						opacity: 0.8; 
-						padding: 15px 10px 10px; 
-						background: #fde428;
-						border-radius: 5px; 
-						-webkit-border-radius: 5px;
-						-moz-border-radius: 5px;
-						left: 10px; 
-						bottom: 10px; 
-						display: none; 
-						cursor: pointer;
-						z-index: 100;
-					}	
-				}
-			</style>
-			<!--arrow top end-->
-                        {if $menuID neq 0}
-                        
-			<!-- main -->
-			<main id="mainId">
-                            <section class="section-banner m-bg valign-wrapper hide-on-tablet">
-                            {Banner::show(3, 'catalog')}
-                        </section>
-					{$page->show(Menu::get($langID, $menuID, 'view'))}
-                                        </main>
-				{else}
-                                    <main id="mainId">
-					{$page->show('main')}
-                                    </main>
-				{/if}
-			
-			<!-- main end -->
-        </div>
-		<!--wrapper end-->
-		<!-- footer -->
-		<footer class="l-footer b-footer">
-			<div class="container">
-				<div class="b-footer__left left">
-					<div class="b-footer__top">
-						<div class="b-logo inline-list">
-							<a href="#"><i class="icon-logo-grey"></i></a>
-						</div>
-						<div class="inline-list b-footer__social hide-on-tablet">
-							{Banner::show(1, 'socials')}
-						</div>
-					</div>
-					<nav class="b-nav inline-list hide-on-tablet">
-						{Menu::getTreeByTemplate($langID, 1, 'li')}
-					</nav>
-				</div>
-				<div class="b-footer__right b-footer__contact right">
-					<h3 class="b-footer__contact-title">Наши контакты</h3>
-					<ul class="b-footer__contact-tel-list">
-						{Controller::run('iblock/contacts/main')}
-					</ul>
-				</div>
-			</div>
-		</footer>
-		<!-- footer end -->
-		<script type="text/javascript" src="../../media/js/vendor/jquery-2.1.3.min.js"></script>
-		<!--<script type="text/javascript">$("body").on("contextmenu", false);</script>-->
-		<script type="text/javascript">
-			var scrollUp = document.getElementById('scrollup'); // найти элемент
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pakers</title>
+    <meta name="description" content="description">
+    <meta name="keywords" content="keywords" />
+    <meta property="og:title" content="PAKERS Производство П.Э.Т. преформ">
 
-			scrollUp.onclick = function() { //обработка клика
-				$('body,html').animate({
-					scrollTop: 0 
-				}, 500);
-			};
+    <link rel="apple-touch-icon" sizes="57x57" href="ico/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="ico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="ico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="ico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="ico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="ico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="ico/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="ico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="ico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="ico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="ico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="ico/favicon-16x16.png">
+    <link rel="manifest" href="ico/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="ico/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 
-			window.onscroll = function () { // при скролле показывать и прятать блок
-				if ( window.pageYOffset > 0 ) {
-					scrollUp.style.display = 'block';
-				} else {
-					scrollUp.style.display = 'none';
-				}
-			};
-		</script>
-		<script type="text/javascript" src="../../media/js/vendor/modernizr-2.7.2.min.js"></script>
-		<script type="text/javascript" src="../../media/js/owl.carousel/owl.carousel.min.js"></script>
-		<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
-		<script type="text/javascript" src="../../bower_components/wow/dist/wow.min.js"></script>
-		<script>
-			wow = new WOW(
-					{
-						boxClass:     'wow',      // default
-						animateClass: 'animated', // default
-						offset:       100,          // default 0
-						mobile:       false,       // default true
-						live:         false        // default true
-					}
-			);
-			wow.init();
-		</script>
-                <script>
-                    $('#scrollup').hover(function(){
-                        $('#scrollup img').attr('src','../../images/arrow-top_white.png');
-                    },function(){
-                        $('#scrollup img').attr('src','../../images/arrow-top.png');
-                    });
-                </script>
-		<script type="text/javascript" src="../../media/js/script.js"></script>
-        {if Registry::get('isLoginAdmin')}
-            <div id="dictionaryList">
-                <table>
-                    <tr>
-                        <td class="id">#</td>
-                        <td>Словарь</td>
-                        <td></td>
-                    </tr>
-                    {foreach Dictionary::getSelected() as $data}
-                        <tr>
-                            <td>{$data.id}</td>
-                            <td>{$data.title}</td>
-                            <td><a href="javascript:void(0);" data-lang="{$data.lang_id}" data-id="{$data.id}" data-title="{json_encode($data.title)|escape}">ред.</a></td>
-                        </tr>
-                    {/foreach}
-                </table>
+    <!--<meta name="format-detection" content="telephone=no">-->
+    <!--<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&subset=cyrillic" rel="stylesheet">-->
+    <link rel="stylesheet" href="media/css/style.css?rand=0.95"/>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- reset-->
+    {literal}<script>!function(e){"use strict";function t(e,t,n){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent&&e.attachEvent("on"+t,n)}function n(t,n){return e.localStorage&&localStorage[t+"_content"]&&localStorage[t+"_file"]===n}function a(t,a){if(e.localStorage&&e.XMLHttpRequest)n(t,a)?o(localStorage[t+"_content"]):l(t,a);else{var s=r.createElement("link");s.href=a,s.id=t,s.rel="stylesheet",s.type="text/css",r.getElementsByTagName("head")[0].appendChild(s),r.cookie=t}}function l(e,t){var n=new XMLHttpRequest;n.open("GET",t,!0),n.onreadystatechange=function(){4===n.readyState&&200===n.status&&(o(n.responseText),localStorage[e+"_content"]=n.responseText,localStorage[e+"_file"]=t)},n.send()}function o(e){var t=r.createElement("style");t.setAttribute("type","text/css"),r.getElementsByTagName("head")[0].appendChild(t),t.styleSheet?t.styleSheet.cssText=e:t.innerHTML=e}var r=e.document;e.loadCSS=function(e,t,n){var a,l=r.createElement("link");if(t)a=t;else{var o;o=r.querySelectorAll?r.querySelectorAll("style,link[rel=stylesheet],script"):(r.body||r.getElementsByTagName("head")[0]).childNodes,a=o[o.length-1]}var s=r.styleSheets;l.rel="stylesheet",l.href=e,l.media="only x",a.parentNode.insertBefore(l,t?a:a.nextSibling);var c=function(e){for(var t=l.href,n=s.length;n--;)if(s[n].href===t)return e();setTimeout(function(){c(e)})};return l.onloadcssdefined=c,c(function(){l.media=n||"all"}),l},e.loadLocalStorageCSS=function(l,o){n(l,o)||r.cookie.indexOf(l)>-1?a(l,o):t(e,"load",function(){a(l,o)})}}(this);</script>{/literal}
+    <script>loadCSS( "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&subset=cyrillic", false, "screen" );</script>
+</head>
+<body>
+<div class="overlay"></div>
+
+<div class="l-wrapper">
+
+    <header class="l-header b-header">
+        <div class="container">
+            <div class="b-header__top">
+                <div class="b-header__left">
+                    <div class="b-logo inline-list">
+                        <a href="/">
+                            <!--<i class="icon-logo"></i>-->
+                            <img width="176" src="/img/common/logo.png" data-2x="/img/common/logo@2x.png" alt="pakers logo"/>
+                        </a>
+                    </div>
+                    <div class="b-header__menu inline-list">
+                        <a class="b-header__menu-link" href="#">
+                            <i class="icon-menu pull-left"></i>
+                            <span class="inline-list hide-on-small">Меню</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="b-header__right">
+                    <div class="b-header__right-link b-tns inline-list hide-on-small">
+                        <i class="icon-tns pull-left"></i>
+                        <span>Торговый <br/>дом</span>
+                    </div>
+                    <div class="b-header__lang inline-list">
+                        <a class="is-active" href="#">Рус</a>
+                        <a href="#">Eng</a>
+                    </div>
+                </div>
             </div>
-        {/if}
-        {if $smarty.const.IS_WMP}<!-- PDO queries count: {Registry::get('db')->getCount()} -->{/if}
-   </body>
+            <!-- nav-->
+            <nav class="b-header__nav">
+                <ul class="b-header__nav-list">
+                    <li><a href="news.html">Новости</a></li>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="#">Инновации</a></li>
+                    <li><a href="#">Клиенты</a></li>
+                    <li><a href="#">Сертификаты</a></li>
+                    <li><a href="#">Команда</a></li>
+                    <li><a href="#">Представители</a></li>
+                    <li><a href="#">Вакансии</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+                <div class="b-lang-switch">
+                    <a class="is-active" href="#">Рус</a>
+                    <a href="#">Eng</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="section-hero">
+        <div class="container">
+            <h1 class="section-hero__title">
+                <strong class="block">Преформы П.Э.Т.</strong>
+                для выдувного формирования
+                бутылок
+            </h1>
+            <a class="btn btn-flat btn-fix" href="catalog.html">В каталог</a>
+        </div>
+    </section>
+
+    <section class="section section-benefit">
+        <div class="container">
+            <h2 class="section-title text-center">Преимущества</h2>
+            <div class="b-benefit-promo text-center">
+                <div class="b-benefit-promo__item">
+                    <figure>
+                        <div class="img-wrap">
+                            <i class="icon-cog"></i>
+                        </div>
+                        <figcaption>
+                            <h3 class="b-benefit-promo__title">Гибкие решения</h3>
+                            <p>ПЭТ преформы различного
+                                стандарта и дизайна</p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <!-- -->
+                <div class="b-benefit-promo__item">
+                    <figure>
+                        <div class="img-wrap">
+                            <i class="icon-chess"></i>
+                        </div>
+                        <figcaption>
+                            <h3 class="b-benefit-promo__title">Надежный партнер</h3>
+                            <p>Более 20 лет в сфере производства ПЭТ заготовок. Нам доверяют клиенты
+                                из 18 стран мира</p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <!-- -->
+                <div class="b-benefit-promo__item">
+                    <figure>
+                        <div class="img-wrap">
+                            <i class="icon-brain"></i>
+                        </div>
+                        <figcaption>
+                            <h3 class="b-benefit-promo__title">Крепкий совместный бизнес</h3>
+                            <p>Мы всегда готовы поделиться знаниями
+                                и технологиями с целью создания взаимовыгодного партнерства</p>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-promo">
+        <div class="section-promo__row">
+            <div class="section-promo__img" data-image-src="/pic/promo-compressor.jpg">
+                <img class="responsive" src="/pic/promo-compressor.jpg" alt="выгода для вас"/>
+            </div>
+            <div class="section-promo__article">
+                <h2 class="section-title">Выгода для вас</h2>
+                <p>
+                    Обладая более чем 20-летним опытом на рынке ПЭТ, мы хорошо понимаем, что участникам рынка необходима не только ПЭТ продукция. Да, речь идет об экономии энергии, более низком потреблении ресурсов, снижении себестоимости продукции и более тесном контроле производственных данных.
+                </p>
+                <p>
+                    <a class="btn btn-fix" href="content.html">подробнее</a>
+                </p>
+            </div>
+        </div>
+        <div class="section-promo__row">
+            <div class="section-promo__img" data-image-src="/pic/promo_1-compressor.jpg">
+                <img class="responsive" src="/pic/promo_1-compressor.jpg" alt="выгода для вас"/>
+            </div>
+            <div class="section-promo__article">
+                <h2 class="section-title">Выгода для окружащей среды</h2>
+                <p>
+                    Переработка пластиковой продукции является важной составляющей современной индустрии ПЭТ продукции. В тесном сотрудничестве с поставщиками и клиентами мы всегда готовы предложить ПЭТ продукцию, произведенную с использованием переработанных ПЭТ продуктов.
+                </p>
+                <p>
+                    <a class="btn btn-fix" href="content.html">подробнее</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-partners text-center">
+        <h3 class="section-title">Наши клиенты</h3>
+        <div class="container">
+            <div class="b-partner-slider js-partner-slider">
+                <a href="#"><img class="img-fluid" src="/pic/partners/obolon.png" alt="obolon"/></a>
+                <a href="#"><img class="img-fluid" src="/pic/partners/karpat.png" alt="karpat"/></a>
+                <a href="#"><img class="img-fluid" src="/pic/partners/mirgorodska.png" alt="mirgorodska"/></a>
+                <a href="#"><img class="img-fluid" src="/pic/partners/morshynska.png" alt="morshynska"/></a>
+                <a href="#"><img class="img-fluid" src="/pic/partners/ppb.png" alt="ppb"/></a>
+            </div>
+        </div>
+    </section>
+    <footer class="l-footer b-footer">
+        <div class="container">
+            <div class="b-footer__logo">
+                <i class="icon-logo"></i>
+                <div class="b-footer__map">
+                    <img class="b-footer__map-img" src="/img/common/map.png" alt="map"/>
+                    <div class="b-footer__lang">
+                        <p>Выбрать язык:</p>
+                        <p class="b-footer__lang-switch">
+                            <a class="is-active" href="#">Русский</a>
+                            <a href="#">English</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="b-footer__top">
+                <div class="b-tns">
+                    <i class="icon-tns pull-left"></i>
+                    <span>Торговый <br/>дом</span>
+                </div>
+                <nav class="b-footer__menu-nav">
+                    <ul class="inline-list">
+                        <li><a href="post.html">Компания</a></li>
+                        <li><a href="post.html">Инновации</a></li>
+                        <li><a href="post.html">Представители</a></li>
+                        <li><a href="post.html">Карта сайта</a></li>
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="post.html">Клиенты</a></li>
+                        <li><a href="post.html">Контакты</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="b-footer__bottom">
+                <div class="b-footer__contact">
+                    <div class="b-footer__contact-item">
+                        <h3 class="b-footer__contact-title">Контакты:</h3>
+                        <address>
+                            <p>
+                                Тел.: +38 (057) 760-45-37, +38 (057) 760-45-38
+                            </p>
+                            <p>
+                                Факс: +38 (057) 760-45-36
+                            </p>
+                            <p>
+                                E-mail: <a href="mailto:sales@petpreform.com.ua">sales@petpreform.com.ua</a>.
+                            </p>
+                        </address>
+                    </div>
+                    <div class="b-footer__contact-item">
+                        <h3 class="b-footer__contact-title">Адрес производства:</h3>
+                        <address>
+                            <p>
+                                въезд Орешкова, 1А, пгт. Васищево,
+                                Харьковский район, Харьковская область. <br/>
+                                <a href="#">Смотреть на карте</a>
+                            </p>
+                        </address>
+                    </div>
+                </div>
+            </div>
+            <div class="b-footer__copyright">
+                <p>© 2016. Все права защищены. Общество с ограниченной ответственностью «ПАКЕРС»</p>
+            </div>
+        </div>
+    </footer>
+
+</div>
+
+<script src="media/js/vendor/jquery.min.js"></script>
+<script src="media/js/vendor/modernizr-2.7.2.min.js"></script>
+<script src="media/js/main.js"></script>
+</body>
 </html>

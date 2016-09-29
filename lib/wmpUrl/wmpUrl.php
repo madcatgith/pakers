@@ -15,7 +15,7 @@ class Url extends Registry {
         foreach (array_filter($array) as $key => $value) {
             switch ($key) {
                 case 'lang':
-                    //$url .= '/' . Lang::getAliasByID($value);
+                    $url .= '/' . Lang::getAliasByID($value);
                     break;
                 case 'menu':
                     $url .= '/' . Menu::getAliasByID(Lang::getID(), $value);
@@ -42,7 +42,7 @@ class Url extends Registry {
         $parts = array_filter(explode('/', $query[0]));
         $matches = array();
         
-        /*if (count($parts) > 0) {
+        if (count($parts) > 0) {
 
             $lang = array_shift($parts);
 
@@ -52,9 +52,10 @@ class Url extends Registry {
                 Lang::setLocalization();
                 $hasPage = false;
             }
-        } else { */
+        } else { 
 		
-        Lang::setLocalization('en');
+        //Lang::setLocalization('en');
+        Lang::setLocalization('ru');}
         $langID = Lang::getID();
         self::set('langID', $langID);
         
@@ -91,7 +92,7 @@ class Url extends Registry {
             $content = Registry::get('db')->query("select id contentID, title contentTitle, cnc contentCNC from ?_content where menu_id='{$menuID}' and lang_id='{$langID}' and cnc='{$elementCnc}' limit 1")->fetch();
             
             $product = array();
-            if(in_array($menuID, Menu::getChildrenIDs($langID, 4))) {
+            if(in_array($menuID, Menu::getChildrenIDs($langID, 9))) {
                 $product = Registry::get('db')->query("select id productID, title productTitle, cnc productCNC from ?_product where category_id = {$menuID} and lang_id = {$langID} and cnc = '{$elementCnc}' limit 1")->fetch();
             }
             
