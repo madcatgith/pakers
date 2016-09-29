@@ -1,0 +1,18 @@
+#dictionaryList {
+    display:none;
+    position:fixed;
+    top:20px;
+    left:20px;
+    width:350px;
+    height:auto;
+    padding:30px 25px;
+    background:#fff;
+    border:1px solid #f5f6f7;
+    z-index: 1000;
+}
+#dictionaryList.active {
+    display:block;
+}
+#dictionaryList a {color:#da0303;font-size: 13px;}
+
+
