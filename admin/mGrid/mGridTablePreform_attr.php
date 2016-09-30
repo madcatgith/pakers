@@ -33,20 +33,18 @@ $from = array(
             'islanged'      => true,
             'rules'         => true
         ),
-    ),
-    'multylang_field' => array(
         'weight' => array(
-            'title' => 'Типоразмер',
+            'title' => 'Вес',
             'tablestyle' => 'width:200px;',
             'colType' => 'text'
         ),
-		'length' => array(
-            'title' => 'Крутящий момент (NM) min',
+		'length_p' => array(
+            'title' => 'Длина',
             'tablestyle' => 'width:200px;',
             'colType' => 'text'
         ),
 		'quantity' => array(
-            'title' => 'Крутящий момент (NM) max',
+            'title' => 'Количество',
             'tablestyle' => 'width:200px;',
             'colType' => 'text'
         ),

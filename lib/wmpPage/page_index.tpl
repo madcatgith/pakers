@@ -98,7 +98,7 @@
                 {Menu::getTreeByTemplate($langID, 1, 'bottom')}
             </div>
             <div class="b-footer__bottom">
-                <div class="b-footer__contact">
+                <!--<div class="b-footer__contact">
                     <div class="b-footer__contact-item">
                         <h3 class="b-footer__contact-title">Контакты:</h3>
                         <address>
@@ -123,7 +123,8 @@
                             </p>
                         </address>
                     </div>
-                </div>
+                </div>-->
+                {Controller::run('iblock/contacts/main')}
             </div>
             <div class="b-footer__copyright">
                 <p>© 2016. Все права защищены. Общество с ограниченной ответственностью «ПАКЕРС»</p>

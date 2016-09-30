@@ -8,7 +8,7 @@ if (!$include || $adm_wellcome != 'Y') {
 if (isset($category_id)) {
     $parent_id = $category_id;
 } else {
-    $parent_id = 4;
+    $parent_id = 3;
 }
 
 include BASEPATH . 'includes.php';
@@ -103,7 +103,7 @@ while ($r = DB::GetArray($query)) {
     $parents[$r['menu_id']][] = $r['id'];
 }
 
-$treeBody = $wmpTree->func_items_tree("item_id", "/admin/lib/wmpProduct/catalogue.php", "&nbsp;&nbsp;", Dictionary::GetAdminWord(231), "", "width:300px; float:left; font-size:9px;", array($parent_id), false, null, ' and id in (' . getIDs($parents, 4) . ')');
+$treeBody = $wmpTree->func_items_tree("item_id", "/admin/lib/wmpProduct/catalogue.php", "&nbsp;&nbsp;", Dictionary::GetAdminWord(231), "", "width:300px; float:left; font-size:9px;", array($parent_id), false, null, ' and id in (' . getIDs($parents, 3) . ')');
 echo '<table width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#a5cd38">
 	<tr>
 	<td width="300" class="td_left" style="vertical-align: top; border: 1px solid #a5cd38;">
@@ -136,7 +136,7 @@ echo admin_func_right_table_start(6);
 
 echo admin_func_right_table_row_start(1);
 echo admin_func_right_table_data(Dictionary::GetAdminWord(319), "", "1lt");
-echo admin_func_right_table_data('<select style="width: 305px;" name="category_id"><option value="4"' . ($parent_id == 4 ? ' selcted="selected"' : '') . '>Каталог</option>' . Helpers::walkRecursive($categories, 4, 1, $parent_id) . '</select>', '', '2tr');
+echo admin_func_right_table_data('<select style="width: 305px;" name="category_id"><option value="3"' . ($parent_id == 3 ? ' selcted="selected"' : '') . '>Каталог</option>' . Helpers::walkRecursive($categories, 3, 1, $parent_id) . '</select>', '', '2tr');
 
 // echo admin_func_right_table_row_start(1);
 // echo admin_func_right_table_data("Бренды:", "", "2lb");
@@ -198,28 +198,27 @@ echo admin_func_right_table_data('<select style="width: 305px;" name="category_i
 #echo admin_func_right_table_data("Новая цена", "", "1lb");
 #echo admin_func_right_table_data(admin_func_right_input("", "new_price", '', 150, 3) . ' <i>грн</i>', "", "2br");
 
-$popularity = '<select name="popularity">';
+/*$popularity = '<select name="popularity">';
 foreach (range(1, 5) as $popular) {
     $popularity .= '<option value="'. $popular .'">'. $popular .'</option>';
 }
-$popularity .= '</select>';
+$popularity .= '</select>';*/
 
-echo admin_func_right_table_row_start(1);
+/*echo admin_func_right_table_row_start(1);
 echo admin_func_right_table_data("Популярность", "", "1lb");
-echo admin_func_right_table_data($popularity, "", "2br");
+echo admin_func_right_table_data($popularity, "", "2br");*/
 
-foreach(array(
-    'url' => 'Картинка главная',
-	'pdf' => 'pdf'
+/*foreach(array(
+    'url' => 'Картинка главная'
 ) as $id => $file) {
     echo admin_func_right_table_row_start(1);
     echo admin_func_right_table_data($file, '', "2l");
     echo admin_func_right_table_data(admin_func_right_input('', $id, '', 305, 3, '', array('id' => $id)) . "&nbsp;" . admin_func_right_input("submit", "", "Обзор", "", "onClick=\"newwin2('/admin/files.php?show=jqGrid&amp;obj={$id}',720,520); return false;\""), "", "2r");
-}
+}*/
 
-echo admin_func_right_table_row_start(1);
+/*echo admin_func_right_table_row_start(1);
 echo admin_func_right_table_data("Слайдер", "", "1lb");
-echo admin_func_right_table_data(Helpers::getGallerySelect('gallery_id', $gallery_id), "", "2br");
+echo admin_func_right_table_data(Helpers::getGallerySelect('gallery_id', $gallery_id), "", "2br");*/
 
 /*
 if(in_array((filter_input(INPUT_GET, 'category_id') ?: filter_input(INPUT_POST, 'category_id')), Menu::getChildrenIDs(1, 14))) {
@@ -299,7 +298,7 @@ foreach (Lang::getLanguages() as $lang) {
     echo admin_func_right_table_data("SEOKeywords", "", "1lb");
     echo admin_func_right_table_data(admin_func_right_input("", "SEOKeywords[{$lang_id}]", '', 335, 3), "", "2br");
 	
-	echo admin_func_right_table_row_start(2);
+/*	echo admin_func_right_table_row_start(2);
     echo admin_func_right_table_data( "Мощность (Kw) минимальная:", "", "1l");
     echo admin_func_right_table_data( admin_func_right_input( "", "minCapacity[{$lang_id}]", '', 335, array('id' => 'minCapacity')) , "", "2r");		
 
@@ -321,7 +320,7 @@ foreach (Lang::getLanguages() as $lang) {
 
 	echo admin_func_right_table_row_start(2);
     echo admin_func_right_table_data( "Передаточное отношение максимальное:", "", "1l");
-    echo admin_func_right_table_data( admin_func_right_input( "", "maxGearRatio[{$lang_id}]", '', 335, array('id' => 'maxGearRatio')) , "", "2r");		
+    echo admin_func_right_table_data( admin_func_right_input( "", "maxGearRatio[{$lang_id}]", '', 335, array('id' => 'maxGearRatio')) , "", "2r");	*/	
 	
 	/*
     echo admin_func_right_table_row_start(2);

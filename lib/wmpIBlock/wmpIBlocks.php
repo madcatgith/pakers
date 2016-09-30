@@ -17,8 +17,8 @@ class IBlocks {
 		'elproduct' => 'Electronic product attributes',
 		'use' => 'Slides for uses'
     );
-    protected static $hasAlias      = array('portfolio', 'contacts', 'productattr', 'elproduct', 'use');
-    protected static $withoutLang   = array();
+    protected static $hasAlias      = array('portfolio', 'contacts', 'elproduct', 'use');
+    protected static $withoutLang   = array('productattr');
 
     public static function getTable($table) {
         return isset(self::$_tables[$table]) ? self::$_tables[$table] : null;

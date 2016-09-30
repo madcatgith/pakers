@@ -126,7 +126,7 @@ unset($k);
 if (isset($category_id)) {
     $parent_id = $category_id;
 } else {
-    $parent_id = 4;
+    $parent_id = 3;
 }
 
 echo admin_func_top(Dictionary::GetAdminWord(626));
@@ -145,7 +145,7 @@ while ($r = DB::GetArray($query)) {
     $parents[$r['menu_id']][] = $r['id'];
 }
 
-$treeBody = $wmpTree->func_items_tree("item_id", "/admin/lib/wmpProduct/catalogue.php", "&nbsp;&nbsp;", Dictionary::GetAdminWord(231), "", "width:300px; float:left; font-size:9px;", array($parent_id), false, null, ' and id in (' . getIDs($parents, 4) . ')');
+$treeBody = $wmpTree->func_items_tree("item_id", "/admin/lib/wmpProduct/catalogue.php", "&nbsp;&nbsp;", Dictionary::GetAdminWord(231), "", "width:300px; float:left; font-size:9px;", array($parent_id), false, null, ' and id in (' . getIDs($parents, 3) . ')');
 echo '<table width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#a5cd38">
 	<tr>
 	<td width="300" class="td_left" style="vertical-align: top; border: 1px solid #a5cd38;">
@@ -183,7 +183,7 @@ echo admin_func_right_table_start(6);
 
 echo admin_func_right_table_row_start(1);
 echo admin_func_right_table_data(Dictionary::GetAdminWord(319), "", "1lt");
-echo admin_func_right_table_data('<select style="width: 305px;" name="category_id"><option value="4"' . ($parent_id == 4 ? ' selcted="selected"' : '') . '>Каталог</option>' . Helpers::walkRecursive($categories, 4, 1, $category_id) . '</select>', '', '2tr');
+echo admin_func_right_table_data('<select style="width: 305px;" name="category_id"><option value="3"' . ($parent_id == 3 ? ' selcted="selected"' : '') . '>Каталог</option>' . Helpers::walkRecursive($categories, 3, 1, $category_id) . '</select>', '', '2tr');
 
 /*$popularity_select = '<select name="popularity">';
 foreach (range(1, 5) as $popular) {
@@ -195,7 +195,7 @@ $popularity_select .= '</select>';*/
 echo admin_func_right_table_data("Популярность", "", "1lb");
 echo admin_func_right_table_data($popularity_select, "", "2br");*/
 
-foreach(array(
+/*foreach(array(
     'url' => 'Картинка товара',
 	'pdf' => 'pdf'
 ) as $id => $file) {
@@ -206,7 +206,7 @@ foreach(array(
 
 echo admin_func_right_table_row_start(1);
 echo admin_func_right_table_data("Слайдер", "", "1lb");
-echo admin_func_right_table_data(Helpers::getGallerySelect('gallery_id', $gallery_id), "", "2br");
+echo admin_func_right_table_data(Helpers::getGallerySelect('gallery_id', $gallery_id), "", "2br");*/
 
 /*
 if(in_array($category_id, Menu::getChildrenIDs(1, 14))) 
@@ -288,7 +288,7 @@ foreach (Lang::getLanguages() as $lang) {
     echo admin_func_right_table_data("SEOKeywords", "", "1lb");
     echo admin_func_right_table_data(admin_func_right_input("", "SEOKeywords[{$lang_id}]", $SEOKeywords[$lang_id], 335, 3), "", "2br");
 	
-	echo admin_func_right_table_row_start(2);
+	/*echo admin_func_right_table_row_start(2);
     echo admin_func_right_table_data( "Мощность (Kw) минимальная:", "", "1l");
     echo admin_func_right_table_data( admin_func_right_input( "", "minCapacity[{$lang_id}]", $minCapacity[$lang_id], 335, 3) , "", "2r");		
 
@@ -311,7 +311,7 @@ foreach (Lang::getLanguages() as $lang) {
 	echo admin_func_right_table_row_start(2);
     echo admin_func_right_table_data( "Передаточное отношение максимальное:", "", "1l");
     echo admin_func_right_table_data( admin_func_right_input( "", "maxGearRatio[{$lang_id}]", $maxGearRatio[$lang_id], 335, 3) , "", "2r");		
-	
+	*/
 	/*
     echo admin_func_right_table_row_start(2);
     echo admin_func_right_table_data( "Цена", "", "1l");

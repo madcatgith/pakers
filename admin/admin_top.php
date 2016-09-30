@@ -97,8 +97,8 @@ if (!$wmpAdmin->isLogedIn()) {
                     echo '</ul></li>';
                     echo '<li><span>Инфоблоки</span><ul>';
                     //echo admin_func_menu_block_list('Категории', mGridTable('Category'));
-					echo admin_func_menu_block_list('Слайдер (главная)', mGridTable('Portfolio'));
-					echo admin_func_menu_block_list('Контакты', mGridTable('Contacts'));
+                    //echo admin_func_menu_block_list('Слайдер (главная)', mGridTable('Portfolio'));
+                    echo admin_func_menu_block_list('Контакты', mGridTable('Contacts'));
 					
                     echo '</ul></li>';
                     echo '<li><span>Модули</span><ul>';
@@ -109,9 +109,9 @@ if (!$wmpAdmin->isLogedIn()) {
                     //echo admin_func_menu_block_list('Свойства товаров', mGridTable('Dictionary'));
                     echo admin_func_menu_block_list('Каталог', 'lib/wmpProduct/catalogue.php');
                     //echo admin_func_menu_block_list('Заказы', 'orders/');
-                                        echo admin_func_menu_block_list('Таблица товара', mGridTable('ProductAttr'));
-					echo admin_func_menu_block_list('Таблица электрических товаров', mGridTable('ElProduct'));
-                                        echo admin_func_menu_block_list('Преформа', mGridTable('preform'));
+					//echo admin_func_menu_block_list('Таблица электрических товаров', mGridTable('ElProduct'));
+                                        //echo admin_func_menu_block_list('Преформы', mGridTable('Preform_products'));
+                                        echo admin_func_menu_block_list('Свойства преформ', mGridTable('Preform_attr'));
                     echo '</ul></li>';
                 }
 

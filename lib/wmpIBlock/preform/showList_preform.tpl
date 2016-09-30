@@ -21,3 +21,12 @@
         </ul>
 </div>
 <!-- services end -->
+
+<div class="section-catalog__footer">
+    <h3>Стандарты горловин</h3>
+    <ul class="b-catalog__list">
+        {foreach $data as $item}
+            <li><a href="product.html"></a></li>
+        {/foreach}
+    </ul>
+</div>

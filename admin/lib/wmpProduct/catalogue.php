@@ -11,7 +11,7 @@ $include = require_once ("../../hierarchyhelpers/treeBuilder.php");
 if (isset($_REQUEST['item_id']) && $_REQUEST['item_id'] > 0) {
     $parent_id = $_REQUEST['item_id'];
 } else {
-    $parent_id = 4;
+    $parent_id = 3;
 }
 
 echo admin_func_sys_message($sys_message);
@@ -31,7 +31,7 @@ while ($r = DB::GetArray($query)) {
     $parents[$r['menu_id']][] = $r['id'];
 }
 
-$treeBody = $wmpTree->func_items_tree("item_id", "/admin/lib/wmpProduct/catalogue.php", "&nbsp;&nbsp;", Dictionary::GetAdminWord(231), "", "width:300px; float:left; font-size:9px;", array($parent_id), false, null, ' and id in (' . getIDs($parents, 4) . ')');
+$treeBody = $wmpTree->func_items_tree("item_id", "/admin/lib/wmpProduct/catalogue.php", "&nbsp;&nbsp;", Dictionary::GetAdminWord(231), "", "width:300px; float:left; font-size:9px;", array($parent_id), false, null, ' and id in (' . getIDs($parents, 3) . ')');
 echo '<table width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#a5cd38"><tr><td width="300" class="td_left" style="vertical-align: top; border: 1px solid #a5cd38;"><table width="100%" cellspacing="0" cellpadding="0" border="0"><tr><td style="padding: 14px 4px 4px 4px; border-bottom: 2px solid #213866;"><form action="/admin/lib/wmpProduct/catalogue.php?oper=search" method="post">';
 echo Dictionary::GetAdminWord(64) . " " . admin_func_right_input("text", "search", $search, "100", "") . " " . admin_func_right_input("submit", "", Dictionary::GetAdminWord(341), "", "1");
 echo '</form></td></tr><tr><td style="padding: 0;">';

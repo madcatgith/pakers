@@ -152,17 +152,14 @@ class Lang {
                 $langArray[$key]['href'] = Url::setUrl(array('lang' => $key, 'menu' => $menuID, 'content' => Url::get('contentCNC')));
             }
         } else if ($productID > 0) {
-            /*
-            $ps = array();
-            $res = DB::Query('select lang_id, cnc from ?_product where id=' . $productID);
-
-            while ($r = DB::GetArray($res)) {
-                $ps[$r['lang_id']] = $r['cnc'] . '-' . $productID;
+            $ps  = array();
+            $res = Registry::get('db')->query('select lang_id,cnc from ?_product where id=' . $productID,true);
+             foreach ($res->fetchAll() as $r) {
+                $ps[$r['lang_id']] = $r['cnc'];
             }
-
-            foreach ($langArray as $key => $lang) {
+            foreach ($langArray as $key => $lang)
                 $langArray[$key]['href'] = Url::setUrl(array('lang' => $key, 'menu' => $menuID, 'product' => $ps[$key]));
-            }*/
+           
         } else if ($menuID > 0) {
             foreach ($langArray as $key => $lang) {
                 $langArray[$key]['href'] = Url::setUrl(array('lang' => $key, 'menu' => $menuID));

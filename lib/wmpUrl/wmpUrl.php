@@ -92,7 +92,7 @@ class Url extends Registry {
             $content = Registry::get('db')->query("select id contentID, title contentTitle, cnc contentCNC from ?_content where menu_id='{$menuID}' and lang_id='{$langID}' and cnc='{$elementCnc}' limit 1")->fetch();
             
             $product = array();
-            if(in_array($menuID, Menu::getChildrenIDs($langID, 9))) {
+            if(in_array($menuID, Menu::getChildrenIDs($langID, 3))) {
                 $product = Registry::get('db')->query("select id productID, title productTitle, cnc productCNC from ?_product where category_id = {$menuID} and lang_id = {$langID} and cnc = '{$elementCnc}' limit 1")->fetch();
             }
             

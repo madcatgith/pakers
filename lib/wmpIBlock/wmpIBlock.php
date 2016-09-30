@@ -159,7 +159,6 @@ class IBlock {
             ' where t.active = 1 and t_l.lang_id = ' . intval($this->_langID) . $this->_where . $this->_order . $sort 
             . $limit;
         }
-
         $query = Registry::get('db')->query($sql);
 
         $this->_rowCount = Registry::get('db')->query('select found_rows()')->fetch(PDO::FETCH_COLUMN);
@@ -180,10 +179,9 @@ class IBlock {
                 $tpl->assign('data', $data);
             }
             $tpl->assign('instance', $this);
-
+            
             return $tpl->fetch(dirname(__FILE__) .'/'. $this->_iblockID .'/'. __FUNCTION__ .'_'. $this->_tpl . '.tpl');
         }
-
         return false;
     }
 
