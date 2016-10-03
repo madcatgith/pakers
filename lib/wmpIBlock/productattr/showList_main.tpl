@@ -2,9 +2,9 @@
 <table>
     <thead>
         <tr>
-            <th>Вес, г</th>
-            <th>Длина, мм</th>
-            <th>Quantity</th>
+            <th>{Dictionary::GetUniqueWord(81)}</th>
+            <th>{Dictionary::GetUniqueWord(82)}</th>
+            <th>{Dictionary::GetUniqueWord(83)}</th>
         </tr>
     </thead>
     <tbody>

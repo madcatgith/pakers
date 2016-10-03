@@ -12,7 +12,8 @@ $content_view_type_title = array(
 $content_view_list_type_title = array(
     'default' => 'Список статей',
     'news' => 'Список новостей',
-    'catalog' => 'Каталог товаров'
+    'customers' => 'Список покупателей',
+    'about' => 'О нас'
 );
 
 # Названия типов отображения пунктов меню

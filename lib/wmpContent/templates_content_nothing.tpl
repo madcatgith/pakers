@@ -1,5 +1,11 @@
-<div class="text-box">
-    <div class="max-wrap">
+<section class="section-nav">
+    <div class="container">
+        {Menu::getCrumbs()}
+        <h1 class="section-title">Пусто</h1>
+    </div>
+</section>
+<main class="l-main">
+    <div class="container">
         {$nothing_title}
     </div>
-</div>
+</main>

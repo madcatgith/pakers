@@ -15,11 +15,11 @@
     </address>
 </div>
 <div class="b-footer__contact-item">
-    <h3 class="b-footer__contact-title">Адрес производства:</h3>
+    <h3 class="b-footer__contact-title">{Dictionary::getUniqueWord(76)}:</h3>
     <address>
         <p>
             {$item->get('address')} <br/>
-            <a href="#">Смотреть на карте</a>
+            <a href="#">{Dictionary::getUniqueWord(77)}</a>
         </p>
     </address>
 </div>

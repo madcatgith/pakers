@@ -65,7 +65,7 @@
                 <div class="b-header__right">
                     <div class="b-header__right-link b-tns inline-list hide-on-small">
                         <i class="icon-tns pull-left"></i>
-                        <span>Торговый <br/>дом</span>
+                        <span>{Dictionary::getUniqueWord(78)}</span>
                     </div>
                     {Lang::getLangByTemplate('default')}
                 </div>
@@ -98,32 +98,6 @@
                 {Menu::getTreeByTemplate($langID, 1, 'bottom')}
             </div>
             <div class="b-footer__bottom">
-                <!--<div class="b-footer__contact">
-                    <div class="b-footer__contact-item">
-                        <h3 class="b-footer__contact-title">Контакты:</h3>
-                        <address>
-                            <p>
-                                Тел.: +38 (057) 760-45-37, +38 (057) 760-45-38
-                            </p>
-                            <p>
-                                Факс: +38 (057) 760-45-36
-                            </p>
-                            <p>
-                                E-mail: <a href="mailto:sales@petpreform.com.ua">sales@petpreform.com.ua</a>.
-                            </p>
-                        </address>
-                    </div>
-                    <div class="b-footer__contact-item">
-                        <h3 class="b-footer__contact-title">Адрес производства:</h3>
-                        <address>
-                            <p>
-                                въезд Орешкова, 1А, пгт. Васищево,
-                                Харьковский район, Харьковская область. <br/>
-                                <a href="#">Смотреть на карте</a>
-                            </p>
-                        </address>
-                    </div>
-                </div>-->
                 {Controller::run('iblock/contacts/main')}
             </div>
             <div class="b-footer__copyright">

@@ -1,57 +1,17 @@
  <section class="section-hero">
         <div class="container">
             <h1 class="section-hero__title">
-                <strong class="block">Преформы П.Э.Т.</strong>
-                для выдувного формирования
-                бутылок
+                <strong class="block">{$siteTitle|escape}</strong>
+                {$postal|escape}
             </h1>
-            <a class="btn btn-flat btn-fix" href="catalog.html">В каталог</a>
+            <a class="btn btn-flat btn-fix" href="{Url::setUrl(['lang'=>$langID,'menu'=>3])}">{Dictionary::getUniqueWord(79)}</a>
         </div>
     </section>
 
     <section class="section section-benefit">
         <div class="container">
-            <h2 class="section-title text-center">Преимущества</h2>
-            <div class="b-benefit-promo text-center">
-                <div class="b-benefit-promo__item">
-                    <figure>
-                        <div class="img-wrap">
-                            <i class="icon-cog"></i>
-                        </div>
-                        <figcaption>
-                            <h3 class="b-benefit-promo__title">Гибкие решения</h3>
-                            <p>ПЭТ преформы различного
-                                стандарта и дизайна</p>
-                        </figcaption>
-                    </figure>
-                </div>
-                <!-- -->
-                <div class="b-benefit-promo__item">
-                    <figure>
-                        <div class="img-wrap">
-                            <i class="icon-chess"></i>
-                        </div>
-                        <figcaption>
-                            <h3 class="b-benefit-promo__title">Надежный партнер</h3>
-                            <p>Более 20 лет в сфере производства ПЭТ заготовок. Нам доверяют клиенты
-                                из 18 стран мира</p>
-                        </figcaption>
-                    </figure>
-                </div>
-                <!-- -->
-                <div class="b-benefit-promo__item">
-                    <figure>
-                        <div class="img-wrap">
-                            <i class="icon-brain"></i>
-                        </div>
-                        <figcaption>
-                            <h3 class="b-benefit-promo__title">Крепкий совместный бизнес</h3>
-                            <p>Мы всегда готовы поделиться знаниями
-                                и технологиями с целью создания взаимовыгодного партнерства</p>
-                        </figcaption>
-                    </figure>
-                </div>
-            </div>
+            <h2 class="section-title text-center">{Dictionary::getUniqueWord(80)}</h2>
+            {Banner::show(2, 'advantages')}
         </div>
     </section>
 
@@ -85,8 +45,8 @@
             </div>
         </div>
     </section>
-
-    <section class="section section-partners text-center">
+    {Content::upContentList($langID,5,"",0,9,true,"","customerSlider",false)}
+    <!--<section class="section section-partners text-center">
         <h3 class="section-title">Наши клиенты</h3>
         <div class="container">
             <div class="b-partner-slider js-partner-slider">
@@ -97,4 +57,4 @@
                 <a href="#"><img class="img-fluid" src="/pic/partners/ppb.png" alt="ppb"/></a>
             </div>
         </div>
-    </section>
+    </section>-->
