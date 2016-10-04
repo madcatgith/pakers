@@ -1,6 +1,6 @@
 <?php
 
-$GridTitle = 'Слайдер';
+$GridTitle = 'Контакты';
 $from = array(
     'jsSort' => 1,
     'jsSortField' => 'sort',
@@ -33,7 +33,12 @@ $from = array(
             'tablestyle' => 'width:150px;',
         ),
 		'skype' => array(
-            'title' => 'Skype(разделитель \',\')',
+            'title' => 'Факс(разделитель \',\')',
+            'colType' => 'text',
+            'tablestyle' => 'width:150px;',
+        ),
+        'mob' => array(
+            'title' => 'Мобильный(разделитель \',\')',
             'colType' => 'text',
             'tablestyle' => 'width:150px;',
         )

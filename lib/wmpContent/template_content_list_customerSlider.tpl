@@ -4,13 +4,9 @@
             <div class="b-partner-slider js-partner-slider">
                 {foreach $contents as $content}
                     {if $content.hasImage}
-                        <a href="{Url::setUrl(['lang'=>$langID,'menu'=>5])}"><img class="img-fluid" src="{$content.imgurl}" alt="obolon"/></a>
+                        <a href="{Url::setUrl(['lang'=>$langID,'menu'=>5])}"><img class="img-fluid" src="/image.php?{Image::mEncrypt('width=215&height=120&src='|cat:$content.imgurl)}" alt="obolon"/></a>
                     {/if}
                 {/foreach}
-                <!--<a href="#"><img class="img-fluid" src="/pic/partners/karpat.png" alt="karpat"/></a>
-                <a href="#"><img class="img-fluid" src="/pic/partners/mirgorodska.png" alt="mirgorodska"/></a>
-                <a href="#"><img class="img-fluid" src="/pic/partners/morshynska.png" alt="morshynska"/></a>
-                <a href="#"><img class="img-fluid" src="/pic/partners/ppb.png" alt="ppb"/></a>-->
             </div>
         </div>
     </section>

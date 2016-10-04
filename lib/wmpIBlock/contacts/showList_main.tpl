@@ -7,6 +7,9 @@
             Тел.: {foreach $item->get('tels') as $tels}{$tels}{/foreach}
         </p>
         <p>
+            Моб.: {$item->get('mob')}
+        </p>
+        <p>
             Факс: {$item->get('skype')}
         </p>
         <p>

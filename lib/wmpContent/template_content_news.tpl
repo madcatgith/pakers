@@ -1,11 +1,5 @@
 <section class="section-nav">
         <div class="container">
-            <!--<div class="b-breadcrumbs">
-                <ul class="b-breadcrumbs__list">
-                    <li><a href="#">Главная</a></li>
-                    <li><span>Выгода для окрущающей среды</span></li>
-                </ul>
-            </div>-->
             {Menu::getCrumbs()}
             <h1 class="section-title">{$title|escape}</h1>
         </div>

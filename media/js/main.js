@@ -374,3 +374,6 @@ function(t, e) { "use strict";
                 i = $(".b-header__nav"),
                 s = $("body");
             e.toggleClass("is-active"), i.toggleClass("is-active"), s.toggleClass("menu-is-open") }), $(".section-promo .section-promo__img").each(function(t, e) { $(e).data("image-src") && $(e).css("backgroundImage", "url('" + $(e).data("image-src") + "')") }), $(".js-partner-slider").owlCarousel({ center: !0, items: 3, loop: !0, margin: 16, responsive: { 1170: { items: 5 }, 1024: { items: 4 }, 768: { items: 3 }, 568: { center: !0, items: 3 } } }) }), $(window).resize(function() {}), $(window).load(function() {});
+$(document).ready(function() {
+    $(".galleryItem").fancybox();
+});

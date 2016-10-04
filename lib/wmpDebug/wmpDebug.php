@@ -32,6 +32,14 @@ class Debug
 	{
 		file_put_contents($_SERVER['DOCUMENT_ROOT'] . '/errors.log', print_r(error_get_last(), 1) . "\n------------\n", FILE_APPEND);
 	}
+        
+        public static function console_log($data='')
+        {
+            echo '<script>';
+            echo 'console.log('. json_encode($data) .')';
+            echo '</script>';
+        }
+
 }
 
 // set_error_handler('Debug::handler', E_ALL); 

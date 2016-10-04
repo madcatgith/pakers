@@ -18,14 +18,16 @@
                             <figcaption>
                                 <h3 class="b-news-list__title">{$content.title}</h3>
                                 <div class="b-news-list__date">
-                                    <span>{$content.date}</span>
+                                    <hr/>
                                 </div>
                                 <p>
                                     {$content.announcement}
                                 </p>
+                                {if $content.another_page}
                                 <!--<p>
-                                    <a class="more-link" href="{$content.href}">{Dictionary::getUniqueWord(72)} →</a>
+                                    <a class="more-link" href="{$content.another_page}">{Dictionary::getUniqueWord(85)} →</a>
                                 </p>-->
+                                {/if}
                             </figcaption>
                         </figure>
                     </div>

@@ -4,6 +4,8 @@
 $content_view_type_title = array(
     'news' => 'Новость',
     'product' => 'Таблица товара',
+    'job' => 'Вакансии',
+    'contacts' => 'Контакты',
     'default' => 'Default',
     'empty'   => 'Empty'
 );
@@ -18,8 +20,7 @@ $content_view_list_type_title = array(
 
 # Названия типов отображения пунктов меню
 $menu_view_type_title = array(
-    'default' => 'Default',
-	'o-nas' => 'О нас',
-	'news' => 'Новости',
+        'default' => 'Default',
+	'certificates' => 'Сертификаты',
         'catalog' => 'Каталог'
 );

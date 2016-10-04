@@ -15,7 +15,6 @@ require_once BASEPATH . 'helpers/Modules/Modules.class.php';
 require_once BASEPATH . "helpers/html_echo.php";
 require_once BASEPATH . "helpers/Mailer/Mailer.class.php";
 require_once BASEPATH . "helpers/Mobile_Detect.php";
-//require_once BASEPATH . "helpers/Debug.class.php";
 
 require_once dirname(__FILE__) . "/DelayFunctions.php";
 require_once dirname(__FILE__) . "/ManagedCache.php";

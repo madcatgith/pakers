@@ -30,6 +30,7 @@
     <!--<meta name="format-detection" content="telephone=no">-->
     <!--<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&subset=cyrillic" rel="stylesheet">-->
     <link rel="stylesheet" href="/media/css/style.css?rand=0.95"/>
+    <link rel="stylesheet" href="/media/js/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" />
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -52,7 +53,7 @@
                     <div class="b-logo inline-list">
                         <a href="/">
                             <!--<i class="icon-logo"></i>-->
-                            <img width="176" src="/img/common/logo.png" data-2x="/img/common/logo@2x.png" alt="pakers logo"/>
+                            <img width="176" src="/img/common/logo{if $langID==3}-eng{/if}.png" data-2x="/img/common/logo@2x.png" alt="pakers logo"/>
                         </a>
                     </div>
                     <div class="b-header__menu inline-list">
@@ -71,6 +72,7 @@
                 </div>
             </div>
             <!-- nav-->
+            <hr/>
             {Menu::getTreeByTemplate($langID, 1, 'top')}
         </div>
     </header>
@@ -81,10 +83,10 @@
         {$page->show('main')}
     {/if}              
     <!--Content end-->
-    <footer class="l-footer b-footer">
+    <footer class="l-footer b-footer" {if $menuID neq 0}style="border-top: 1px solid #d7d7d7;"{/if}>
         <div class="container">
             <div class="b-footer__logo">
-                <i class="icon-logo"></i>
+                <i class="icon-logo" {if $langID==3}style="background-position: center; background-image: url(/img/common/logo-eng.png);"{/if}></i>
                 <div class="b-footer__map">
                     <img class="b-footer__map-img" src="/img/common/map.png" alt="map"/>
                     {Lang::getLangByTemplate('footer')}
@@ -110,6 +112,7 @@
 
 <script src="/media/js/vendor/jquery.min.js"></script>
 <script src="/media/js/vendor/modernizr-2.7.2.min.js"></script>
+<script src="/media/js/fancybox/jquery.fancybox.js"></script>
 <script src="/media/js/main.js"></script>
 </body>
 </html>

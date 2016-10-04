@@ -9,7 +9,7 @@ class Forms {
     protected $_form = array();
     protected $_elements = array();
     protected $_errors = array();
-    protected $_extensions = array('gif','png' ,'jpg', 'bmp', 'doc', 'docx', 'pdf');
+    protected $_extensions = array('gif','png' ,'jpg', 'bmp', 'doc', 'docx', 'pdf', 'txt', 'rtf');
 
     public function __construct($id, $langID) {
         $this->_ID = intval($id);
